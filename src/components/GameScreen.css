@@ -1,0 +1,187 @@
+/* src/components/GameScreen.css */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-color: #121212;
+  font-family: 'Special Elite', monospace;
+  color: #EAEAEA;
+  padding: 20px;
+  /* (แก้ไข) เพิ่ม padding-bottom ให้มากขึ้น */
+  padding-bottom: 200px; /* เว้นที่ให้ "การ์ดคำใบ้" และ "ปุ่ม" */
+}
+
+/* 1. นาฬิกา */
+.timer-display {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-shadow: 0 0 10px #FFF;
+  margin-bottom: 20px;
+  transition: color 0.5s ease;
+}
+
+.timer-low {
+  color: #E50914; /* สีแดงเมื่อเวลาน้อย */
+  text-shadow: 0 0 15px #E50914;
+  animation: pulse 1s infinite; /* สั่นเบาๆ */
+}
+
+/* 2. รายชื่อผู้เล่น */
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.player-card {
+  background-color: #1A1A1A;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.player-avatar {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #E50914;
+  margin-bottom: 10px;
+}
+
+.player-name {
+  font-size: 1.2rem;
+  color: #DDD;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* !!! นี่คือ CSS สำหรับ Spotlight !!! */
+.player-card.spotlight {
+  border-color: #FFD700; /* สีทอง */
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+  transform: scale(1.05); /* ขยายใหญ่ขึ้นเล็กน้อย */
+  animation: pulse-yellow 1.5s infinite;
+}
+
+/* 3. การ์ดคำใบ้ (ด้านล่าง) */
+.my-word-card {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #252525;
+  border-top: 3px solid #FFD700; /* สีทอง (สำหรับทุกคน) */
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.my-word-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #AAA;
+}
+
+.my-word-card .my-word {
+  margin: 5px 0;
+  font-size: 2.5rem;
+  color: #FFFFFF;
+}
+
+/* 4. (เพิ่มส่วนนี้) ปุ่ม End Turn และ Call Vote */
+.action-area {
+  height: 80px; /* จองพื้นที่ไว้ */
+  display: flex;
+  flex-wrap: wrap; /* ถ้าปุ่มล้น ให้ขึ้นบรรทัดใหม่ */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 10px;
+}
+
+.btn-end-turn {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-family: 'Special Elite', monospace;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  
+  background-color: #FFD700; /* สีทอง */
+  color: #121212; /* สีดำ */
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+.btn-end-turn:hover {
+  background-color: #FFF;
+}
+
+.btn-call-vote {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-family: 'Special Elite', monospace;
+  border: 1px solid #E50914;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: transparent;
+  color: #E50914;
+  margin-left: 10px; /* เว้นระยะจากปุ่ม End Turn */
+}
+
+.btn-call-vote:hover {
+  background-color: rgba(229, 9, 20, 0.1);
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+}
+
+/* 5. (เพิ่มส่วนนี้) Media Query สำหรับมือถือ */
+@media (max-width: 400px) {
+  .player-grid {
+    grid-template-columns: 1fr; 
+  }
+  .timer-display {
+    font-size: 4rem; 
+  }
+  .my-word-card .my-word {
+    font-size: 2rem; 
+  }
+  .action-area {
+    /* บนมือถือ ปุ่มอาจจะใหญ่ไป ให้จัดเรียงใหม่ */
+    flex-direction: column;
+    height: auto; /* ปล่อยความสูงอัตโนมัติ */
+  }
+  .btn-end-turn {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  .btn-call-vote {
+    width: 90%;
+    margin-left: 0; /* ไม่ต้องเว้นระยะ */
+  }
+}
+
+/* Animation (จาก Timer และ Spotlight) */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes pulse-yellow {
+  0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+  50% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.9); }
+  100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+}

@@ -1,0 +1,84 @@
+/* src/components/RevealScreen.css */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+.reveal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Special Elite', monospace;
+  color: #FFFFFF;
+  padding: 20px;
+  text-align: center;
+}
+
+/* พื้นหลังสีเขียว (ชนะ) / สีแดง (แพ้) */
+.reveal-container.win {
+  background: radial-gradient(circle, #2a5a2a, #1a3a1a);
+}
+.reveal-container.lose {
+  background: radial-gradient(circle, #5a2a2a, #3a1a1a);
+}
+
+.reveal-title-win {
+  font-size: 4rem;
+  color: #90ee90; /* เขียวอ่อน */
+  text-shadow: 0 0 15px #FFF;
+  margin-bottom: 10px;
+}
+
+.reveal-title-lose {
+  font-size: 4rem;
+  color: #E50914; /* แดง */
+  text-shadow: 0 0 15px #FFF;
+  margin-bottom: 10px;
+}
+
+.reveal-subtitle {
+  font-size: 1.2rem;
+  color: #DDD;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.reveal-card {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid #AAA;
+  border-radius: 8px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+
+.reveal-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #AAA;
+  padding-bottom: 10px;
+}
+
+.reveal-card p {
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+
+.btn-play-again {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-family: 'Special Elite', monospace;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  
+  background-color: #FFFFFF;
+  color: #121212;
+}
+
+.btn-play-again:hover {
+  background-color: #DDD;
+  transform: scale(1.05);
+}

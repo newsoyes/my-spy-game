@@ -1,0 +1,139 @@
+/* src/components/LobbyScreen.css */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+.lobby-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* เริ่มจากข้างบน */
+  min-height: 100vh;
+  background-color: #121212;
+  font-family: 'Special Elite', monospace;
+  color: #EAEAEA;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.lobby-header {
+  margin-bottom: 30px;
+}
+
+.lobby-header h2 {
+  font-size: 2.5rem;
+  color: #E50914; /* แดง */
+  margin-bottom: 10px;
+}
+
+.lobby-header p {
+  font-size: 1.2rem;
+  color: #AAA;
+}
+
+.room-code-card {
+  background-color: #1A1A1A;
+  border: 2px dashed #444;
+  border-radius: 8px;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.room-code-card:hover {
+  background-color: #252525;
+  border-color: #E50914;
+}
+
+.room-code-label {
+  display: block;
+  font-size: 1rem;
+  color: #AAA;
+}
+
+.room-code-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  letter-spacing: 5px;
+}
+
+.copy-hint {
+  display: block;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+.player-list-container {
+  background-color: #1A1A1A;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+.player-list-container h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.player-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.player-item {
+  font-size: 1.5rem;
+  padding: 10px;
+  border-bottom: 1px solid #2A2A2A;
+}
+
+.player-item:last-child {
+  border-bottom: none;
+}
+
+.host-badge {
+  font-size: 0.9rem;
+  color: #E50914;
+  background-color: rgba(229, 9, 20, 0.1);
+  border: 1px solid #E50914;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.btn-start-game {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-family: 'Special Elite', monospace;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  background-color: #E50914; /* สีแดง */
+  color: white;
+}
+
+.btn-start-game:hover:not(:disabled) {
+  background-color: #FF1A21;
+  box-shadow: 0 0 15px #FF1A21;
+}
+
+.btn-start-game:disabled {
+  background-color: #333;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.waiting-text {
+  font-size: 1.2rem;
+  color: #AAA;
+}

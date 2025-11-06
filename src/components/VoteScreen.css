@@ -1,0 +1,78 @@
+/* src/components/VoteScreen.css */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+.vote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #121212;
+  font-family: 'Special Elite', monospace;
+  color: #EAEAEA;
+  padding: 20px;
+  text-align: center;
+}
+
+.vote-title {
+  font-size: 4rem;
+  color: #E50914;
+  text-shadow: 0 0 10px #E50914;
+  margin-bottom: 0;
+}
+
+.vote-subtitle {
+  font-size: 1.2rem;
+  color: #AAA;
+  margin-bottom: 40px;
+}
+
+.vote-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.btn-vote {
+  padding: 20px;
+  font-size: 1.5rem;
+  font-family: 'Special Elite', monospace;
+  border: 2px solid #555;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #1A1A1A;
+  color: #DDD;
+}
+
+.btn-vote:not(:disabled):hover {
+  background-color: #252525;
+  border-color: #FFD700;
+  color: #FFD700;
+}
+
+/* เมื่อเรากดโหวตแล้ว */
+.btn-vote.voted {
+  background-color: #FFD700;
+  border-color: #FFD700;
+  color: #121212;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #FFD700;
+}
+
+/* ปิดปุ่มอื่นเมื่อโหวตแล้ว */
+.btn-vote:disabled:not(.voted) {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background-color: #1A1A1A;
+  color: #555;
+  border-color: #333;
+}
+
+.waiting-text {
+  font-size: 1.2rem;
+  color: #AAA;
+  margin-top: 30px;
+}

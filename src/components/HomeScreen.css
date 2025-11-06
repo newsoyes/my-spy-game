@@ -1,0 +1,105 @@
+/* ธีมสายลับ: ดำ แดง และฟอนต์พิมพ์ดีด */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #121212; /* พื้นหลังสีดำเข้ม */
+  font-family: 'Special Elite', monospace; /* ฟอนต์พิมพ์ดีด */
+  color: #EAEAEA;
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 6rem;
+  color: #E50914; /* สีแดงสด (เหมือน Netflix) */
+  margin: 0;
+  text-shadow: 0 0 10px #E50914;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #AAA;
+  margin-top: -10px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.card {
+  background-color: #1A1A1A;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 30px;
+  width: 90%;
+  max-width: 350px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.join-card {
+  background-color: transparent;
+  border: 1px dashed #444;
+  box-shadow: none;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  background-color: #252525;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-family: 'Special Elite', monospace;
+  box-sizing: border-box; /* สำคัญมาก */
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-family: 'Special Elite', monospace;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.btn-create {
+  background-color: #E50914;
+  color: white;
+}
+
+.btn-join {
+  background-color: #555;
+  color: #DDD;
+}
+
+.btn:disabled {
+  background-color: #333;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-create:hover:not(:disabled) {
+  background-color: #FF1A21;
+  box-shadow: 0 0 15px #FF1A21;
+}
+
+.btn-join:hover:not(:disabled) {
+  background-color: #666;
+}
+.credit-text {
+  margin-top: 30px; /* ระยะห่างจากกล่อง "เข้าร่วม" */
+  font-size: 0.9rem;
+  color: #555; /* สีเทาจางๆ */
+  letter-spacing: 1px;
+}
